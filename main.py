@@ -17,10 +17,14 @@ num_epochs = 5
 batch_size = 4
 learning_rate = 0.001
 
+train_data, test_data = random_split(dataset, [int(0.8 * len(dataset)), int(0.2 * len(dataset)) + 1])
+
 # TODO: Transform data (preprocessing)
 
-# 4 Classes
-classes = ('non-demented', 'demented', 'mild-demented', 'very-mild-demented')
+train_loader = DataLoader(train_data, batch_size=batch_size, shuffle=True)
+test_loader = DataLoader(test_data, batch_size=batch_size, shuffle=False)
+
+classes = dataset.classes
 
 
 # TODO: Implement CNN (class Net(nn.Module))
