@@ -9,6 +9,8 @@ import numpy as np
 # Device configuration
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu') # use GPU if available
 
+dataset = ImageFolder('Data', transform=transforms.ToTensor())
+
 # Hyper-parameters
 # Subject to change
 num_epochs = 5
