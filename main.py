@@ -5,6 +5,7 @@ import torchvision
 import torchvision.transforms as transforms
 import matplotlib.pyplot as plt
 import numpy as np
+from torchvision.datasets import ImageFolder
 
 # Device configuration
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu') # use GPU if available
